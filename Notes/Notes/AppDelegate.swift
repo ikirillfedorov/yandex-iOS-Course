@@ -18,26 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let note1 = Note(uid: nil, title: "Title", content: "fdsfds", noteColor: .red, importance: .important, destractionDate: nil)
-        
+        let note2 = Note(uid: nil, title: "Title333", content: "fdsfds", noteColor: .red, importance: .important, destractionDate: nil)
+
         let noteBook = FileNotebook()
-        print(noteBook.notes.count)
-        
         noteBook.add(note1)
-        print(noteBook.notes.count)
-        
-        noteBook.remove(with: note1.uid)
-        print(noteBook.notes.count)
-        
-        noteBook.add(note1)
-        print(noteBook.notes.count)
+        noteBook.add(note2)
         
         noteBook.saveToFile()
+        noteBook.remove(with: note1.uid)
+        noteBook.remove(with: note2.uid)
+        
         print(noteBook.notes.count)
         
         noteBook.loadFromFile()
         
         print(noteBook.notes.count)
-
+        
         return true
     }
 

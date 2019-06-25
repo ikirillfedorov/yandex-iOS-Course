@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 enum Importance: String {
-    case unimportant = "unimportant"
-    case ordinary = "ordinary"
-    case important = "important"
+    case unimportant
+    case ordinary
+    case important
 }
 
 struct Note {

@@ -16,7 +16,14 @@ import UIKit
 //Если важность «обычная», НЕ сохраняет её в json.
 //UIColor, enum, Date сохраняет в json НЕ в виде сложных объектов. То есть допустимы любые скалаярные типы (Int, Double, …), строки, массивы и словари.
 
-let formatter = DateFormatter()
+let formatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .full
+    formatter.timeStyle = .short
+    return formatter
+}()
+
+
 
 enum ParseError: Error {
     case wrongFormat
@@ -84,8 +91,6 @@ extension Note {
         }
         
         if let date = destractionDate {
-            formatter.dateStyle = .full
-            formatter.timeStyle = .short
             dict[CodingKeys.destractionDate.rawValue] = formatter.string(from: date)
         }
         
