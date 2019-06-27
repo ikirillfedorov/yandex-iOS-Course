@@ -32,7 +32,7 @@ class FileNotebook {
 
     //MARK - tasks
     public func add(_ noteBook: Note) {
-        notes[noteBook.uid] = noteBook // добавляем в массив
+        notes[noteBook.uid] = noteBook // добавляем в коллекцию
     }
     
     public func remove(with uid: String) {
@@ -48,12 +48,12 @@ class FileNotebook {
             do {
                 try fileManager.createDirectory(at: dirurl, withIntermediateDirectories: true, attributes: nil) // если нету создаем папку с таким названием по указанному пути
             } catch {
-                print(error)
+                return
             }
         }
         let filePath = dirurl.appendingPathComponent(fileName).path //создаем путь файла + название
         do {
-            let data = try JSONSerialization.data(withJSONObject: notes.values.map { $0.json }, options: []) // получаем масств дат JSON
+            let data = try JSONSerialization.data(withJSONObject: notes.values.map { $0.json }, options: []) // получаем JSON
             fileManager.createFile(atPath: filePath, contents: data, attributes: nil) //записываем файл по указанному пути с указанным именем
         } catch {
             print(error)
