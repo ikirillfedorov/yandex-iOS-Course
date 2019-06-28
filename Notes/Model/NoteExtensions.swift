@@ -94,7 +94,7 @@ extension Note {
             dict[CodingKeys.destractionDate.rawValue] = formatter.string(from: date)
         }
         
-        if noteColor != .white {
+        if self.noteColor != .white {
             var fRed: CGFloat = 0
             var fGreen: CGFloat = 0
             var fBlue: CGFloat = 0

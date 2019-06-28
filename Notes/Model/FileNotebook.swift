@@ -43,7 +43,6 @@ class FileNotebook {
         let path = getPath() //получаем путь к папке Caches
         let dirurl = path.appendingPathComponent(folderName) // получаем путь к папке
         var isDir: ObjCBool = false
-        print(dirurl)
         if !(fileManager.fileExists(atPath: dirurl.path, isDirectory: &isDir) && isDir.boolValue) { // проверяем отсутствие папки с таким названим по указаному пути
             do {
                 try fileManager.createDirectory(at: dirurl, withIntermediateDirectories: true, attributes: nil) // если нету создаем папку с таким названием по указанному пути

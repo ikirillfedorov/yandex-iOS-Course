@@ -16,7 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-                
+        
+        #if DEBUG
+        let note1 = Note(uid: nil, title: "Title", content: "Buy milk", noteColor: .red, importance: .important, destractionDate: nil)
+        let note2 = Note(uid: nil, title: "Title", content: "Buy bread", noteColor: .green, importance: .important, destractionDate: nil)
+
+        let notebook = FileNotebook()
+        
+        notebook.add(note1)
+        print("Now in notebook \(notebook.notes.count) notes")
+        notebook.add(note2)
+        print("Now in notebook \(notebook.notes.count) notes")
+
+        notebook.saveToFile()
+        
+        notebook.remove(with: note1.uid)
+        print("Now in notebook \(notebook.notes.count) notes")
+
+        notebook.remove(with: note2.uid)
+        print("Now in notebook \(notebook.notes.count) notes")
+
+        notebook.loadFromFile()
+        print("Now in notebook \(notebook.notes.count) notes")
+        #endif
+
         return true
     }
 
