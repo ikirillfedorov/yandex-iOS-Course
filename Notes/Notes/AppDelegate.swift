@@ -17,6 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        //Задача: Включите main thread checker и придумайте, какой код нужно добавить в applicationDidFinishLaucnhing, чтобы он остановил выполнение.
+        let label = UILabel(frame: CGRect(x: 10, y: 10, width: 10, height: 10))
+        let url = URL(string: "https://www.apple.com")!
+
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data {
+                label.text = "\(data.count) bytes downloaded" //пытаюсь обновить элемент пользовательского интерфейсане на главном потоке
+            }
+        }
+        //Загрузка данных происходит на background потоке, что бы не блокировать main поток. MTC останваливает выполнение т.к. обновление пользовательского интерфейса должно проходить только на main потоке.
+        task.resume()
+        
+        
+        
+        
         #if DEBUG
         let note1 = Note(uid: nil, title: "Title", content: "Buy milk", noteColor: .red, importance: .important, destractionDate: nil)
         let note2 = Note(uid: nil, title: "Title", content: "Buy bread", noteColor: .green, importance: .important, destractionDate: nil)
