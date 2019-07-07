@@ -45,22 +45,38 @@
                                             <action selector="datePiackerSwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="ghY-vW-gxJ"/>
                                         </connections>
                                     </switch>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl9-h7-wlo">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl9-h7-wlo" customClass="CheckMarkView" customModule="Notes" customModuleProvider="target">
                                         <rect key="frame" x="35" y="256" width="80" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="LJe-pF-kPj"/>
+                                            <constraint firstAttribute="height" constant="80" id="c5G-7N-0Bh"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sez-eY-dKl">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sez-eY-dKl" customClass="CheckMarkView" customModule="Notes" customModuleProvider="target">
                                         <rect key="frame" x="123" y="256" width="80" height="80"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="2lv-bv-sB3"/>
+                                            <constraint firstAttribute="width" constant="80" id="Xyp-vx-i19"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLP-cb-p6j">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLP-cb-p6j" customClass="CheckMarkView" customModule="Notes" customModuleProvider="target">
                                         <rect key="frame" x="211" y="256" width="80" height="80"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pallete.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="4ye-CL-NDN">
-                                        <rect key="frame" x="299" y="256" width="80" height="80"/>
                                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="GPB-iS-LIF"/>
+                                            <constraint firstAttribute="width" constant="80" id="eHF-zq-qcl"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ch-Rb-CRO" customClass="CheckMarkView" customModule="Notes" customModuleProvider="target">
+                                        <rect key="frame" x="299" y="256" width="80" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="gCD-PE-MIZ"/>
+                                            <constraint firstAttribute="width" constant="80" id="tW1-nr-zsu"/>
+                                        </constraints>
+                                    </view>
                                     <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vo1-y0-nnJ">
                                         <rect key="frame" x="0.0" y="240" width="414" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="584085609.00146401">
@@ -68,44 +84,42 @@
                                         </date>
                                     </datePicker>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="centerY" secondItem="kl9-h7-wlo" secondAttribute="centerY" id="76O-G2-5u1"/>
-                                    <constraint firstItem="sez-eY-dKl" firstAttribute="leading" secondItem="kl9-h7-wlo" secondAttribute="trailing" constant="8" symbolic="YES" id="76h-XH-5FS"/>
-                                    <constraint firstItem="4ye-CL-NDN" firstAttribute="width" secondItem="kl9-h7-wlo" secondAttribute="width" id="7Ye-j7-lDf"/>
-                                    <constraint firstItem="sez-eY-dKl" firstAttribute="top" secondItem="kl9-h7-wlo" secondAttribute="top" id="8h2-gp-eVA"/>
-                                    <constraint firstItem="4ye-CL-NDN" firstAttribute="top" secondItem="kl9-h7-wlo" secondAttribute="top" id="B9r-YM-v8T"/>
-                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="leading" secondItem="sez-eY-dKl" secondAttribute="trailing" constant="8" symbolic="YES" id="FfP-2R-UQl"/>
+                                    <constraint firstItem="7Ch-Rb-CRO" firstAttribute="width" secondItem="kl9-h7-wlo" secondAttribute="width" id="0YA-LD-OR5"/>
+                                    <constraint firstItem="7Ch-Rb-CRO" firstAttribute="height" secondItem="kl9-h7-wlo" secondAttribute="height" id="1EU-5B-2hT"/>
+                                    <constraint firstItem="sez-eY-dKl" firstAttribute="height" secondItem="kl9-h7-wlo" secondAttribute="height" id="45s-HP-9YG"/>
+                                    <constraint firstAttribute="bottom" secondItem="kl9-h7-wlo" secondAttribute="bottom" constant="482" id="4JX-Lb-gT5"/>
+                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="top" secondItem="kl9-h7-wlo" secondAttribute="top" id="6wq-Tr-hKY"/>
+                                    <constraint firstItem="7Ch-Rb-CRO" firstAttribute="leading" secondItem="MLP-cb-p6j" secondAttribute="trailing" constant="8" id="Dn4-oq-yUD"/>
                                     <constraint firstAttribute="trailing" secondItem="Mbz-I7-xGN" secondAttribute="trailing" constant="20" id="GiI-Yt-fYG"/>
+                                    <constraint firstItem="sez-eY-dKl" firstAttribute="width" secondItem="kl9-h7-wlo" secondAttribute="width" id="HPA-aR-W5y"/>
                                     <constraint firstItem="Mbz-I7-xGN" firstAttribute="leading" secondItem="nPa-Y9-q8b" secondAttribute="leading" constant="20" id="HRa-Kk-FOb"/>
                                     <constraint firstItem="Vo1-y0-nnJ" firstAttribute="leading" secondItem="nPa-Y9-q8b" secondAttribute="leading" id="JH4-gV-g41"/>
                                     <constraint firstItem="06b-Og-FN0" firstAttribute="top" secondItem="nPa-Y9-q8b" secondAttribute="top" constant="50" id="NmF-ja-SGU"/>
-                                    <constraint firstAttribute="bottom" secondItem="kl9-h7-wlo" secondAttribute="bottom" constant="482" id="Now-Oa-pVm"/>
-                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="width" secondItem="kl9-h7-wlo" secondAttribute="width" id="Ntz-EM-gvx"/>
                                     <constraint firstItem="4i3-Zl-ZA6" firstAttribute="leading" secondItem="nPa-Y9-q8b" secondAttribute="leading" constant="20" id="OvM-Gw-09r"/>
                                     <constraint firstAttribute="trailing" secondItem="06b-Og-FN0" secondAttribute="trailing" constant="20" id="Phf-HV-Pmn"/>
-                                    <constraint firstItem="4ye-CL-NDN" firstAttribute="height" secondItem="kl9-h7-wlo" secondAttribute="height" id="Phr-ba-Dgc"/>
                                     <constraint firstItem="06b-Og-FN0" firstAttribute="leading" secondItem="nPa-Y9-q8b" secondAttribute="leading" constant="20" id="Q92-Dt-Zrg"/>
+                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="leading" secondItem="sez-eY-dKl" secondAttribute="trailing" constant="8" id="Qnc-a9-6Eb"/>
                                     <constraint firstItem="Vo1-y0-nnJ" firstAttribute="top" secondItem="Mbz-I7-xGN" secondAttribute="bottom" constant="107" id="T34-Z4-0pN"/>
                                     <constraint firstAttribute="trailing" secondItem="Vo1-y0-nnJ" secondAttribute="trailing" id="a8h-bn-rvu"/>
                                     <constraint firstItem="Mbz-I7-xGN" firstAttribute="top" secondItem="06b-Og-FN0" secondAttribute="top" constant="50" id="cgW-b3-gcd"/>
-                                    <constraint firstItem="4ye-CL-NDN" firstAttribute="centerY" secondItem="kl9-h7-wlo" secondAttribute="centerY" id="cuK-5O-uPL"/>
-                                    <constraint firstItem="sez-eY-dKl" firstAttribute="height" secondItem="kl9-h7-wlo" secondAttribute="height" id="g2X-65-TRF"/>
-                                    <constraint firstAttribute="trailing" secondItem="4ye-CL-NDN" secondAttribute="trailing" constant="35" id="h4m-Ex-X7g"/>
-                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="height" secondItem="kl9-h7-wlo" secondAttribute="height" id="hH2-vI-hjU"/>
-                                    <constraint firstItem="kl9-h7-wlo" firstAttribute="top" secondItem="4i3-Zl-ZA6" secondAttribute="bottom" constant="24" id="hZs-DC-G3n"/>
-                                    <constraint firstItem="4ye-CL-NDN" firstAttribute="leading" secondItem="MLP-cb-p6j" secondAttribute="trailing" constant="8" symbolic="YES" id="hbm-CL-Laj"/>
+                                    <constraint firstItem="7Ch-Rb-CRO" firstAttribute="top" secondItem="kl9-h7-wlo" secondAttribute="top" id="es4-eE-I69"/>
                                     <constraint firstItem="4i3-Zl-ZA6" firstAttribute="bottom" secondItem="Mbz-I7-xGN" secondAttribute="bottom" constant="99" id="jHo-se-O6r"/>
-                                    <constraint firstItem="sez-eY-dKl" firstAttribute="width" secondItem="kl9-h7-wlo" secondAttribute="width" id="nb3-Mb-n3Z"/>
+                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="width" secondItem="kl9-h7-wlo" secondAttribute="width" id="nTI-2a-Run"/>
+                                    <constraint firstItem="sez-eY-dKl" firstAttribute="top" secondItem="kl9-h7-wlo" secondAttribute="top" id="nbC-ia-ERK"/>
                                     <constraint firstItem="irf-MQ-Lpw" firstAttribute="centerY" secondItem="4i3-Zl-ZA6" secondAttribute="centerY" id="pnB-xt-Ubc"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4i3-Zl-ZA6" secondAttribute="trailing" constant="20" symbolic="YES" id="rsa-dP-JaP"/>
                                     <constraint firstItem="irf-MQ-Lpw" firstAttribute="leading" secondItem="4i3-Zl-ZA6" secondAttribute="trailing" constant="49.5" id="rtr-2f-t1O"/>
-                                    <constraint firstItem="kl9-h7-wlo" firstAttribute="leading" secondItem="nPa-Y9-q8b" secondAttribute="leading" constant="35" id="tOB-Ev-def"/>
-                                    <constraint firstItem="sez-eY-dKl" firstAttribute="centerY" secondItem="kl9-h7-wlo" secondAttribute="centerY" id="uSN-Co-abj"/>
-                                    <constraint firstAttribute="bottom" secondItem="4i3-Zl-ZA6" secondAttribute="bottom" constant="586" id="wFq-Ay-p44"/>
-                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="top" secondItem="kl9-h7-wlo" secondAttribute="top" id="wIq-AX-Vbu"/>
+                                    <constraint firstItem="MLP-cb-p6j" firstAttribute="height" secondItem="kl9-h7-wlo" secondAttribute="height" id="s1N-oc-1ZL"/>
+                                    <constraint firstItem="kl9-h7-wlo" firstAttribute="top" secondItem="4i3-Zl-ZA6" secondAttribute="bottom" constant="24" id="x7s-BC-90f"/>
+                                    <constraint firstItem="kl9-h7-wlo" firstAttribute="leading" secondItem="nPa-Y9-q8b" secondAttribute="leading" constant="35" id="ydo-SR-HJ5"/>
+                                    <constraint firstItem="sez-eY-dKl" firstAttribute="leading" secondItem="kl9-h7-wlo" secondAttribute="trailing" constant="8" id="zHJ-Bl-xsq"/>
                                     <constraint firstItem="Mbz-I7-xGN" firstAttribute="top" secondItem="06b-Og-FN0" secondAttribute="bottom" constant="20" id="zut-eo-fs8"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="28F-ND-wni" appends="YES" id="Vea-Nm-J3L"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -120,17 +134,24 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="bottomConstrain" destination="Now-Oa-pVm" id="qr0-8a-rfO"/>
+                        <outlet property="bottomConstrain" destination="4JX-Lb-gT5" id="jmd-I7-uiQ"/>
+                        <outlet property="contentTextView" destination="Mbz-I7-xGN" id="Ed0-Cr-XCZ"/>
                         <outlet property="datePicker" destination="Vo1-y0-nnJ" id="8uv-1I-Lue"/>
-                        <outlet property="topConstrain" destination="hZs-DC-G3n" id="SUG-dr-7ee"/>
+                        <outlet property="topConstrain" destination="x7s-BC-90f" id="nQf-8H-y8s"/>
+                        <outletCollection property="colorViews" destination="kl9-h7-wlo" collectionClass="NSMutableArray" id="nAN-XP-e6C"/>
+                        <outletCollection property="colorViews" destination="sez-eY-dKl" collectionClass="NSMutableArray" id="aHf-D3-1gS"/>
+                        <outletCollection property="colorViews" destination="MLP-cb-p6j" collectionClass="NSMutableArray" id="fs8-xs-OXH"/>
+                        <outletCollection property="colorViews" destination="7Ch-Rb-CRO" collectionClass="NSMutableArray" id="xDl-sI-RW4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="28F-ND-wni">
+                    <connections>
+                        <action selector="tappedToMainScrollView:" destination="BYZ-38-t0r" id="iBN-gf-JAn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1242.0289855072465" y="112.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="pallete.jpeg" width="180" height="180"/>
-    </resources>
 </document>
