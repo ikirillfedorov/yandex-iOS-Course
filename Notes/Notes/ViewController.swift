@@ -17,15 +17,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBOutlet weak var chosenColor: UIView!
-    @IBOutlet weak var chosenColorLabel: UILabel!
+    @IBOutlet weak var chosenColorView: UIView!
+    @IBOutlet weak var chosenColorHexLabel: UILabel!
     @IBOutlet weak var colorPickerMainView: UIView!
     @IBOutlet weak var palleteView: HSBColorPicker!
     
     
     //MARK: - IB Actions
+    @IBAction func palleteViewLongPress(_ sender: UILongPressGestureRecognizer) {
+        colorPickerMainView.isHidden = false
+    }
     @IBAction func colorPickerDoneButton(_ sender: UIButton) {
         colorPickerMainView.isHidden = true
+        colorViews[3].backgroundColor = chosenColorView.backgroundColor
+        for view in colorViews {
+            view.isHasCheckMark = view == colorViews[3]
+            view.setNeedsDisplay()
+        }
     }
     
     @IBAction func datePiackerSwitchAction(_ sender: UISwitch) {
@@ -54,6 +62,14 @@ class ViewController: UIViewController {
     }
 
     //MARK: - Supported functions
+        func getStringFrom(color: UIColor) -> String {
+        guard let components = color.cgColor.components else { return ""}
+        let r = components[0]
+        let g = components[1]
+        let b = components[2]
+        return String.init(format: "%02X%02X%02X", arguments: [Int(r * 255), Int(g * 255), Int(b * 255)])
+    }
+
     func setting() {
         colorViews[0].isHasCheckMark = true //default check mark
         guard let image = UIImage(named: "pallete.jpeg") else { return } //get pallette image
@@ -64,8 +80,17 @@ class ViewController: UIViewController {
         }
         contentTextView.layer.borderColor = UIColor.gray.cgColor
         contentTextView.layer.borderWidth = 1
+        
+        palleteView.layer.borderWidth = 1
+        contentTextView.layer.borderColor = UIColor.black.cgColor
+        
+        chosenColorView.layer.borderWidth = 1
+        chosenColorView.layer.borderColor = UIColor.black.cgColor
+        chosenColorView.layer.cornerRadius = 5
+
+        chosenColorHexLabel.layer.borderWidth = 1
+        chosenColorHexLabel.layer.borderColor = UIColor.black.cgColor
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +101,8 @@ class ViewController: UIViewController {
 
 extension ViewController: HSBColorPickerDelegate {
     func HSBColorColorPickerTouched(sender: HSBColorPicker, color: UIColor, point: CGPoint, state: UIGestureRecognizer.State) {
-        chosenColor.backgroundColor = color
+        chosenColorView.backgroundColor = color
+        chosenColorHexLabel.text = "#\(getStringFrom(color: color))"
     }
 }
+
