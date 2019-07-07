@@ -17,7 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var chosenColor: UIView!
+    @IBOutlet weak var chosenColorLabel: UILabel!
+    @IBOutlet weak var colorPickerMainView: UIView!
+    @IBOutlet weak var palleteView: HSBColorPicker!
+    
+    
     //MARK: - IB Actions
+    @IBAction func colorPickerDoneButton(_ sender: UIButton) {
+        colorPickerMainView.isHidden = true
+    }
+    
     @IBAction func datePiackerSwitchAction(_ sender: UISwitch) {
         if sender.isOn {
             datePicker.isHidden = false
@@ -59,6 +69,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        palleteView.delegate = self
         setting()
+    }
+}
+
+extension ViewController: HSBColorPickerDelegate {
+    func HSBColorColorPickerTouched(sender: HSBColorPicker, color: UIColor, point: CGPoint, state: UIGestureRecognizer.State) {
+        chosenColor.backgroundColor = color
     }
 }

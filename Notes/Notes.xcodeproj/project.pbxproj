@@ -11,6 +11,7 @@
 		3D325FC0D6E2F16CFBB2B19C /* libPods-NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D78010B110A8109DEB503937 /* libPods-NotesTests.a */; };
 		5C51282C22D2064A0050A7C2 /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C51282B22D2064A0050A7C2 /* CheckMarkView.swift */; };
 		5C51282E22D211C60050A7C2 /* pallete.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5C51282D22D211C60050A7C2 /* pallete.jpeg */; };
+		5C51283622D23CBF0050A7C2 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C51283522D23CBF0050A7C2 /* ColorPicker.swift */; };
 		5C5805BF22C3F97B00DEBF23 /* LaunchScreen_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5805BE22C3F97B00DEBF23 /* LaunchScreen_Image.png */; };
 		5C96839222C1660D004BEE9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96839122C1660D004BEE9E /* AppDelegate.swift */; };
 		5C96839422C1660D004BEE9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96839322C1660D004BEE9E /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		5C06E285E4D9C7E39344A20B /* Pods-NotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesUITests.debug.xcconfig"; path = "Target Support Files/Pods-NotesUITests/Pods-NotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C51282B22D2064A0050A7C2 /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		5C51282D22D211C60050A7C2 /* pallete.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pallete.jpeg; sourceTree = "<group>"; };
+		5C51283522D23CBF0050A7C2 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		5C5805BE22C3F97B00DEBF23 /* LaunchScreen_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen_Image.png; sourceTree = "<group>"; };
 		5C96838E22C1660D004BEE9E /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C96839122C1660D004BEE9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				5C9683C122C16649004BEE9E /* NoteExtensions.swift */,
 				5C9683C322C16667004BEE9E /* FileNotebook.swift */,
 				5C51282B22D2064A0050A7C2 /* CheckMarkView.swift */,
+				5C51283522D23CBF0050A7C2 /* ColorPicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			files = (
 				5C51282C22D2064A0050A7C2 /* CheckMarkView.swift in Sources */,
 				5C9683C422C16667004BEE9E /* FileNotebook.swift in Sources */,
+				5C51283622D23CBF0050A7C2 /* ColorPicker.swift in Sources */,
 				5C96839422C1660D004BEE9E /* ViewController.swift in Sources */,
 				5C9683C222C16649004BEE9E /* NoteExtensions.swift in Sources */,
 				5C96839222C1660D004BEE9E /* AppDelegate.swift in Sources */,

@@ -83,6 +83,53 @@
                                             <!--2019-07-06 06:00:09 +0000-->
                                         </date>
                                     </datePicker>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEX-Qw-rbi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2c9-M5-7c5">
+                                                <rect key="frame" x="30" y="30" width="80" height="80"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zh7-K8-PDM">
+                                                        <rect key="frame" x="0.0" y="59" width="80" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ji5-ex-Vd3">
+                                                <rect key="frame" x="186" y="748" width="47" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="colorPickerDoneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dhw-P3-wuO"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brightness:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRH-82-CMS">
+                                                <rect key="frame" x="150" y="30" width="213" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6QL-DM-KKD">
+                                                <rect key="frame" x="148" y="80" width="217" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </slider>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2K-F8-goE" customClass="HSBColorPicker" customModule="Notes" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="237" width="414" height="494"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -135,8 +182,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomConstrain" destination="4JX-Lb-gT5" id="jmd-I7-uiQ"/>
+                        <outlet property="chosenColor" destination="2c9-M5-7c5" id="tVF-NW-iav"/>
+                        <outlet property="chosenColorLabel" destination="Zh7-K8-PDM" id="lpr-kd-bb8"/>
+                        <outlet property="colorPickerMainView" destination="PEX-Qw-rbi" id="6mt-y3-TPe"/>
                         <outlet property="contentTextView" destination="Mbz-I7-xGN" id="Ed0-Cr-XCZ"/>
                         <outlet property="datePicker" destination="Vo1-y0-nnJ" id="8uv-1I-Lue"/>
+                        <outlet property="palleteView" destination="u2K-F8-goE" id="a54-Hl-YLW"/>
                         <outlet property="topConstrain" destination="x7s-BC-90f" id="nQf-8H-y8s"/>
                         <outletCollection property="colorViews" destination="kl9-h7-wlo" collectionClass="NSMutableArray" id="nAN-XP-e6C"/>
                         <outletCollection property="colorViews" destination="sez-eY-dKl" collectionClass="NSMutableArray" id="aHf-D3-1gS"/>
