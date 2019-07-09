@@ -31,7 +31,7 @@
                                         <rect key="frame" x="20" y="50" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Destroy Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4i3-Zl-ZA6">
                                         <rect key="frame" x="20" y="211" width="135" height="21"/>
@@ -68,7 +68,7 @@
                                             <constraint firstAttribute="width" secondItem="MLP-cb-p6j" secondAttribute="height" multiplier="1:1" id="fY1-FB-Y0M"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ch-Rb-CRO" customClass="CheckMarkView" customModule="Notes" customModuleProvider="target">
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ch-Rb-CRO" customClass="CheckMarkView" customModule="Notes" customModuleProvider="target">
                                         <rect key="frame" x="299" y="256" width="80" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
@@ -170,7 +170,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2126" y="-52"/>
+            <point key="canvasLocation" x="-2828" y="-69"/>
         </scene>
     </scenes>
 </document>

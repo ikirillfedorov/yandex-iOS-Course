@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     //MARK: - IB Actions
     @IBAction func palleteViewLongPress(_ sender: UILongPressGestureRecognizer) {
         colorPickerView.isHidden = false
-        
+        titleTextField.resignFirstResponder()
+        contentTextView.resignFirstResponder()
     }
     
     @IBAction func datePiackerSwitchAction(_ sender: UISwitch) {
@@ -52,10 +53,9 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Supported functions
-    func setting() {
+    private func setting() {
+        setBackGroundImage()
         colorViews[0].isHasCheckMark = true //default check mark
-        guard let image = UIImage(named: "pallete.jpeg") else { return } //get pallette image
-        colorViews[3].backgroundColor = UIColor.init(patternImage: image) //set color for multiColor cell
         for view in colorViews {
             view.layer.borderColor = UIColor.black.cgColor
             view.layer.borderWidth = 1
@@ -71,7 +71,20 @@ class ViewController: UIViewController {
         colorPickerView.delegate = self
         setting()
     }
+    
+    private func setBackGroundImage() {
+        let view = colorViews[3]
+        guard let image = UIImage(named: "pallete.jpeg") else { return } //get pallette image
+        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 1.0)
+        image.draw(in: rect)
+        guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else { return }
+        UIGraphicsEndImageContext()
+        view.backgroundColor = UIColor.init(patternImage: newImage)
+    }
+    
 }
+
 
 //MARK - extnsions
 extension ViewController: UITextFieldDelegate {
@@ -90,3 +103,4 @@ extension ViewController: chosenColorDelegate {
         }
     }
 }
+
