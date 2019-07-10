@@ -24,6 +24,7 @@ class ColorPickerView: UIView {
     @IBOutlet weak var palletColorView: HSBColorPicker!
     @IBOutlet weak var chosenColorTextLabel: UILabel!
     @IBOutlet weak var brightnessSliderValue: UISlider!
+    @IBOutlet weak var targetImageView: UIImageView!
     
     @IBAction func brightnessSliderAction(_ sender: UISlider) {
         chosenColorView.backgroundColor = colorFromPallete.colorWithBrightness(brightness: CGFloat(sender.value))
@@ -37,7 +38,7 @@ class ColorPickerView: UIView {
         self.isHidden = true
     }
     
-    //MARK: - loard view
+    //MARK: - load view
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -177,6 +178,7 @@ extension ColorPickerView: HSBColorPickerDelegate {
         chosenColorView.backgroundColor = color.colorWithBrightness(brightness: CGFloat(brightnessSliderValue.value))
         colorFromPallete = color
         chosenColorTextLabel.text = color.getStringFrom()
+        targetImageView.center = point
     }
 }
 

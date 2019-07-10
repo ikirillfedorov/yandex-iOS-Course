@@ -150,6 +150,7 @@
                         <outlet property="colorPickerView" destination="67V-Hp-1XR" id="dDx-t4-q66"/>
                         <outlet property="contentTextView" destination="Mbz-I7-xGN" id="Ed0-Cr-XCZ"/>
                         <outlet property="datePicker" destination="Vo1-y0-nnJ" id="8uv-1I-Lue"/>
+                        <outlet property="scrollViewBottomConstraint" destination="d1C-8e-GAa" id="rmA-Yx-GwU"/>
                         <outlet property="titleTextField" destination="06b-Og-FN0" id="ORw-GU-0KV"/>
                         <outlet property="topConstrain" destination="YfM-FM-yvE" id="v7i-Ti-JJe"/>
                         <outletCollection property="colorViews" destination="kl9-h7-wlo" collectionClass="NSMutableArray" id="nAN-XP-e6C"/>

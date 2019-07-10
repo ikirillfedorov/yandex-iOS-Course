@@ -13,13 +13,15 @@ class ViewController: UIViewController {
     //MARK: - IB Outlets
     @IBOutlet var colorViews: [CheckMarkView]!
     @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var topConstrain: NSLayoutConstraint!
-    @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var colorPickerView: ColorPickerView!
     
+    //MARK: - IB Outlets constrains
+    @IBOutlet weak var topConstrain: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     //MARK: - IB Actions
     @IBAction func palleteViewLongPress(_ sender: UILongPressGestureRecognizer) {
         colorPickerView.isHidden = false
@@ -65,10 +67,25 @@ class ViewController: UIViewController {
         contentTextView.layer.cornerRadius = 5
     }
     
+    @objc private func updateTextViw(parametrs: NSNotification) {
+        guard let userInfo = parametrs.userInfo,
+         let keyboardFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
+        if parametrs.name == UIResponder.keyboardWillHideNotification {
+            scrollViewBottomConstraint.constant = 0.0
+        } else {
+            scrollViewBottomConstraint.constant = -keyboardFrame.height
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.delegate = self
         colorPickerView.delegate = self
+        //MARK: - keyboard hitifications
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTextViw), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTextViw), name: UIResponder.keyboardWillHideNotification, object: nil)
+
         setting()
     }
     
@@ -82,7 +99,6 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         view.backgroundColor = UIColor.init(patternImage: newImage)
     }
-    
 }
 
 
