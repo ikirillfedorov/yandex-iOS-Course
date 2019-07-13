@@ -12,12 +12,23 @@ class EditViewController: UIViewController {
 
     var modelController: ModelController!
 
-    
     @IBOutlet weak var newNameTextField: UITextField!
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        newNameTextField.delegate = modelController
+        newNameTextField.text = modelController.userInfo.name
+    }
+    
+    override func viewDidLoad() {
+        newNameTextField.delegate = self
+    }
+}
+
+extension EditViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        modelController.userInfo.name = textField.text ?? ""
+        textField.resignFirstResponder()
+        return true
     }
 }
 

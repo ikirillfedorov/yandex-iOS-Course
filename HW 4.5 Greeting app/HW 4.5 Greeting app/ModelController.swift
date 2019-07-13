@@ -17,10 +17,3 @@ class ModelController: NSObject {
     var userInfo = UserInfo()
 }
 
-extension ModelController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        userInfo.name = textField.text!
-        textField.resignFirstResponder()
-        return true
-    }
-}

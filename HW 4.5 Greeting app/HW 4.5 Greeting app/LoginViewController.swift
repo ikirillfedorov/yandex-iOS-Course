@@ -19,8 +19,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func logInButtonAction(_ sender: UIButton) {
         
-        let name = nameTextField.text
-        modelController.userInfo.name = name
+        let modelController = ModelController()
+        modelController.userInfo.name = nameTextField.text
         
         let infoViewController = InfoViewController()
         infoViewController.modelController = modelController

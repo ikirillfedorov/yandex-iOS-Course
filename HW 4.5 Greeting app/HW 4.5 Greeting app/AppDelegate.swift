@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let logInViewController = LoginViewController()
-        logInViewController.modelController = ModelController()
         
         window?.rootViewController = logInViewController
         window?.makeKeyAndVisible()
