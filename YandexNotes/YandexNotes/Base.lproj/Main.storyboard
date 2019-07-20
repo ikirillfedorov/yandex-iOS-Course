@@ -44,7 +44,7 @@
         <scene sceneID="u4n-mh-2RW">
             <objects>
                 <navigationController id="o9H-D7-wjI" customClass="ImagesNavController" customModule="YandexNotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Images" id="enF-70-PX0"/>
+                    <tabBarItem key="tabBarItem" title="Images" image="camera" id="enF-70-PX0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9h5-k8-yid">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -186,13 +186,6 @@
                                             <segment title="important"/>
                                         </segments>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agj-BG-TAw">
-                                        <rect key="frame" x="173" y="495" width="68" height="30"/>
-                                        <state key="normal" title="Save note"/>
-                                        <connections>
-                                            <action selector="saveNoteButtonAction:" destination="myX-Of-FG6" eventType="touchUpInside" id="WCQ-79-kOy"/>
-                                        </connections>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pZJ-H5-FLt">
                                         <rect key="frame" x="20" y="100" width="374" height="33"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -252,7 +245,7 @@
                                             <outletCollection property="gestureRecognizers" destination="Cky-60-Vv9" appends="YES" id="ieP-Cf-tMa"/>
                                         </connections>
                                     </view>
-                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fCo-qH-Mbo">
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fCo-qH-Mbo">
                                         <rect key="frame" x="0.0" y="240" width="414" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="584085609.00146401">
                                             <!--2019-07-06 06:00:09 +0000-->
@@ -269,7 +262,6 @@
                                     <constraint firstItem="gMO-Gx-BGd" firstAttribute="centerY" secondItem="ZVh-81-jX2" secondAttribute="centerY" id="Ivs-Br-bQG"/>
                                     <constraint firstAttribute="trailing" secondItem="pZJ-H5-FLt" secondAttribute="trailing" constant="20" id="JdE-oj-ttm"/>
                                     <constraint firstAttribute="bottom" secondItem="edg-0A-gai" secondAttribute="bottom" constant="482" id="Kjr-jL-5fv"/>
-                                    <constraint firstItem="agj-BG-TAw" firstAttribute="top" secondItem="DRE-ZP-dgT" secondAttribute="bottom" constant="30" id="LTN-OV-7ZW"/>
                                     <constraint firstItem="qaZ-Mc-uWQ" firstAttribute="height" secondItem="edg-0A-gai" secondAttribute="height" id="LWO-he-0yL"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZVh-81-jX2" secondAttribute="trailing" constant="20" symbolic="YES" id="M5G-ij-cVR"/>
                                     <constraint firstItem="GXl-Hi-zVk" firstAttribute="top" secondItem="qaZ-Mc-uWQ" secondAttribute="top" id="M7u-Ig-T8C"/>
@@ -282,7 +274,6 @@
                                     <constraint firstItem="i1V-bY-96D" firstAttribute="height" secondItem="edg-0A-gai" secondAttribute="height" id="Xvv-TT-ZvG"/>
                                     <constraint firstItem="qaZ-Mc-uWQ" firstAttribute="leading" secondItem="GXl-Hi-zVk" secondAttribute="trailing" constant="8" id="ZNP-eY-tv5"/>
                                     <constraint firstItem="pZJ-H5-FLt" firstAttribute="top" secondItem="1pn-k2-hks" secondAttribute="top" constant="50" id="au0-4P-q2y"/>
-                                    <constraint firstItem="agj-BG-TAw" firstAttribute="centerX" secondItem="9xR-Jf-bTC" secondAttribute="centerX" id="fgw-ll-vid"/>
                                     <constraint firstItem="pZJ-H5-FLt" firstAttribute="top" secondItem="1pn-k2-hks" secondAttribute="bottom" constant="20" id="g0z-bX-QbP"/>
                                     <constraint firstAttribute="trailing" secondItem="qaZ-Mc-uWQ" secondAttribute="trailing" constant="35" id="g94-qq-qd9"/>
                                     <constraint firstItem="fCo-qH-Mbo" firstAttribute="top" secondItem="pZJ-H5-FLt" secondAttribute="bottom" constant="107" id="hlF-z5-1ME"/>
@@ -378,7 +369,7 @@
         <scene sceneID="gTJ-6k-Kkg">
             <objects>
                 <navigationController id="V1a-QY-Lzb" customClass="NotesNavController" customModule="YandexNotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notes" id="aKH-zQ-xBu"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="file" id="aKH-zQ-xBu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZHZ-Qg-b7k">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -410,4 +401,8 @@
             <point key="canvasLocation" x="-1467" y="54"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="35" height="35"/>
+        <image name="file" width="30" height="30"/>
+    </resources>
 </document>

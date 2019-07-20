@@ -104,11 +104,13 @@ class TableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let note = getNote(at: indexPath)
-        
+
         tableView.performBatchUpdates({
             tableView.deleteRows(at: [indexPath], with: .left)
             notebook.remove(with: note.uid)
         }, completion: nil)
+        guard let navController = navigationController as? NotesNavController else { return }
+        navController.notebook.saveToFile()
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {

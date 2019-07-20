@@ -11,10 +11,10 @@ import UIKit
 class NotesNavController: UINavigationController {
     
     var notebook = FileNotebook()
-    
     var colorFromColorPicker: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        notebook.loadFromFile()
     }
 }

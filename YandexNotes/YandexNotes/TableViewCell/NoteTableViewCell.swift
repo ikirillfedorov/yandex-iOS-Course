@@ -19,6 +19,9 @@ class NoteTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.selectionStyle = .none
+        noteColorLabel.layer.borderWidth = 1
+        noteColorLabel.layer.borderColor = UIColor.black.cgColor
+        noteColorLabel.layer.cornerRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

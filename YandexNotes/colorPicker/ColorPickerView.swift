@@ -192,7 +192,6 @@ extension ColorPickerView: HSBColorPickerDelegate {
 
 extension UIColor {
     func getStringFrom() -> String {
-        print(self.debugDescription)
         guard let components = self.cgColor.components else { return "" }
             let r = components[0]
             let g = components[1]

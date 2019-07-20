@@ -11,6 +11,7 @@ import UIKit
 class EditNoteViewController: UIViewController {
     
     var selectedNote: Note?
+    var colorFromColorPicker: UIColor?
     
     //MARK: - IB Outlets
     @IBOutlet var colorViews: [CheckMarkView]!
@@ -23,27 +24,8 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var topConstrain: NSLayoutConstraint!
     @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
+    
     //MARK: - IB Actions
-    
-    @IBAction func saveNoteButtonAction(_ sender: UIButton) {
-        guard let navController = navigationController as? NotesNavController else { return }
-        var noteColor: UIColor?
-        for colorView in colorViews {
-            if colorView.isHasCheckMark {
-                noteColor = colorView.backgroundColor
-            }
-        }
-            
-        navController.notebook.add(Note(uid: selectedNote?.uid,
-                                        title: titleTextField.text ?? "",
-                                        content: contentTextView.text,
-                                        noteColor: noteColor,
-                                        importance: .important,
-                                        destractionDate: datePicker.date))
-        navController.popViewController(animated: true)
-    }
-    
-    
     @IBAction func palleteViewLongPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizer.State.began {
             performSegue(withIdentifier: "ShowColorPicker", sender: nil)
@@ -87,23 +69,29 @@ class EditNoteViewController: UIViewController {
     //MARK: - Supported functions
     private func setting() {
         setBackGroundImage()
-        colorViews[0].isHasCheckMark = true //default check mark
+//        colorViews[0].isHasCheckMark = true //default check mark
         for view in colorViews {
             view.layer.borderColor = UIColor.black.cgColor
             view.layer.borderWidth = 1
         }
+        
+        colorViews[0].backgroundColor = .white
+        colorViews[1].backgroundColor = .red
+        colorViews[2].backgroundColor = .green
+
         contentTextView.layer.borderColor = UIColor.lightGray.cgColor
         contentTextView.layer.borderWidth = 1
         contentTextView.layer.cornerRadius = 5
+        
+        datePicker.minimumDate = Date()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let note = selectedNote {
+
             titleTextField.text = note.title
             contentTextView.text = note.content
-            guard let date = note.destractionDate else { return }
-            datePicker.date = date
             
             switch note.importance.rawValue {
             case "unimportant":
@@ -113,17 +101,56 @@ class EditNoteViewController: UIViewController {
             default:
                 importanceSegmentControl.selectedSegmentIndex = 1
             }
+            print(note.noteColor.debugDescription)
+            
+            if colorFromColorPicker == nil {
+                switch note.noteColor {
+                case .white:
+                    colorViews[0].isHasCheckMark = true
+                case .red:
+                    colorViews[1].isHasCheckMark = true
+                case .green:
+                    colorViews[2].isHasCheckMark = true
+                default:
+                    colorViews[3].isHasCheckMark = true
+                    colorViews[3].backgroundColor = note.noteColor
+                }
+            }
+
+            guard let date = note.destractionDate else { return }
+            datePicker.date = date
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.delegate = self
+        let saveBarButton = UIBarButtonItem(title: "Save", style: UIBarButtonItem.Style.done, target: self, action: #selector(saveBarButtonAction))
+        navigationItem.rightBarButtonItem = saveBarButton
         
         //MARK: - keyboard hitifications
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextViw), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextViw), name: UIResponder.keyboardWillHideNotification, object: nil)
         setting()
+    }
+    
+    @objc func saveBarButtonAction () {
+        guard let navController = navigationController as? NotesNavController else { return }
+        var noteColor: UIColor?
+        for colorView in colorViews {
+            if colorView.isHasCheckMark {
+                noteColor = colorView.backgroundColor
+            }
+        }
+        
+        navController.notebook.add(Note(uid: selectedNote?.uid,
+                                        title: titleTextField.text ?? "",
+                                        content: contentTextView.text,
+                                        noteColor: noteColor,
+                                        importance: .important,
+                                        destractionDate: datePicker.date))
+        navController.popViewController(animated: true)
+        navController.notebook.saveToFile()
     }
     
     @objc private func updateTextViw(parametrs: NSNotification) {
@@ -161,6 +188,7 @@ extension EditNoteViewController: UITextFieldDelegate {
 
 extension EditNoteViewController: ColorPickerDelegate {
     func chosenColor(color: UIColor) {
+        colorFromColorPicker = color
         colorViews[3].backgroundColor = color
         for view in colorViews {
             view.isHasCheckMark = view === colorViews[3]
