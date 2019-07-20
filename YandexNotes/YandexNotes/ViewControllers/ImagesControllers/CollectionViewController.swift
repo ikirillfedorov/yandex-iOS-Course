@@ -22,15 +22,15 @@ class CollectionViewController: UIViewController {
             self.present(self.imagePicker, animated: true, completion: nil)
         }
         
-//        let actionCamera = UIAlertAction(title: "From Camera", style: .default) { (alert) in
-//            self.imagePicker.sourceType = .camera
-//            self.present(self.imagePicker, animated: true, completion: nil)
-//        }
+        let actionCamera = UIAlertAction(title: "From Camera", style: .default) { (alert) in
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
         
-        let actionCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addAction(actionPhoto)
-//        alert.addAction(actionCamera)
+        alert.addAction(actionCamera)
         alert.addAction(actionCancel)
         present(alert, animated: true, completion: nil)
     }

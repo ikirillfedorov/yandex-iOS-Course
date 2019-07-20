@@ -47,7 +47,6 @@ class TableTableViewController: UITableViewController {
         
         guard let navController = navigationController as? NotesNavController else { return }
         notebook = navController.notebook
-        notebook.createTestNotes() // create test notes
         
         notesTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
     }

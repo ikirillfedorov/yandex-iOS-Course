@@ -251,6 +251,21 @@
                                             <!--2019-07-06 06:00:09 +0000-->
                                         </date>
                                     </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AW-6p-U61">
+                                        <rect key="frame" x="82" y="495" width="250" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="0ej-EL-YKo"/>
+                                            <constraint firstAttribute="height" constant="40" id="L3u-V6-FWb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButton:" destination="myX-Of-FG6" eventType="touchUpInside" id="UiZ-Xs-9ff"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -267,7 +282,9 @@
                                     <constraint firstItem="GXl-Hi-zVk" firstAttribute="top" secondItem="qaZ-Mc-uWQ" secondAttribute="top" id="M7u-Ig-T8C"/>
                                     <constraint firstItem="pZJ-H5-FLt" firstAttribute="leading" secondItem="9xR-Jf-bTC" secondAttribute="leading" constant="20" id="Q1d-nF-c9O"/>
                                     <constraint firstItem="1pn-k2-hks" firstAttribute="top" secondItem="9xR-Jf-bTC" secondAttribute="top" constant="50" id="Rh9-Rx-J5Z"/>
+                                    <constraint firstItem="6AW-6p-U61" firstAttribute="centerX" secondItem="9xR-Jf-bTC" secondAttribute="centerX" id="Rlx-nq-7AS"/>
                                     <constraint firstItem="GXl-Hi-zVk" firstAttribute="height" secondItem="edg-0A-gai" secondAttribute="height" id="T6S-Ge-Va0"/>
+                                    <constraint firstItem="6AW-6p-U61" firstAttribute="top" secondItem="DRE-ZP-dgT" secondAttribute="bottom" constant="30" id="UGR-32-wQ4"/>
                                     <constraint firstItem="i1V-bY-96D" firstAttribute="top" secondItem="GXl-Hi-zVk" secondAttribute="top" id="Uct-Uy-csQ"/>
                                     <constraint firstItem="edg-0A-gai" firstAttribute="top" secondItem="i1V-bY-96D" secondAttribute="top" id="VE9-13-QOg"/>
                                     <constraint firstItem="DRE-ZP-dgT" firstAttribute="top" secondItem="2Qr-us-Eac" secondAttribute="bottom" constant="30" id="Xt1-4r-fK7"/>
@@ -311,6 +328,7 @@
                         <outlet property="contentTextView" destination="pZJ-H5-FLt" id="gKl-1h-Kgf"/>
                         <outlet property="datePicker" destination="fCo-qH-Mbo" id="0Dv-FS-uRp"/>
                         <outlet property="importanceSegmentControl" destination="DRE-ZP-dgT" id="rSQ-jW-yMi"/>
+                        <outlet property="saveButton" destination="6AW-6p-U61" id="rNv-vb-C4g"/>
                         <outlet property="scrollViewBottomConstraint" destination="wC9-Ar-Cga" id="gqP-v0-5MA"/>
                         <outlet property="titleTextField" destination="1pn-k2-hks" id="y9M-f3-w5y"/>
                         <outlet property="topConstrain" destination="rR5-ds-Sne" id="quI-z3-SCI"/>

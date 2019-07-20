@@ -16,5 +16,6 @@ class NotesNavController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notebook.loadFromFile()
+        notebook.createTestNotes() // create test notes
     }
 }

@@ -19,6 +19,8 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var importanceSegmentControl: UISegmentedControl!
+    @IBOutlet weak var saveButton: UIButton!
+    
     
     //MARK: - IB Outlets constrains
     @IBOutlet weak var topConstrain: NSLayoutConstraint!
@@ -34,6 +36,26 @@ class EditNoteViewController: UIViewController {
         titleTextField.resignFirstResponder()
         contentTextView.resignFirstResponder()
     }
+    
+    @IBAction func saveButton(_ sender: UIButton) {
+        guard let navController = navigationController as? NotesNavController else { return }
+        var noteColor: UIColor?
+        for colorView in colorViews {
+            if colorView.isHasCheckMark {
+                noteColor = colorView.backgroundColor
+            }
+        }
+        
+        navController.notebook.add(Note(uid: selectedNote?.uid,
+                                        title: titleTextField.text ?? "",
+                                        content: contentTextView.text,
+                                        noteColor: noteColor,
+                                        importance: .important,
+                                        destractionDate: datePicker.date))
+        navController.popViewController(animated: true)
+        navController.notebook.saveToFile()
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let controller = segue.destination as? ColorPickerViewController, segue.identifier == "ShowColorPicker" else { return }
@@ -83,6 +105,8 @@ class EditNoteViewController: UIViewController {
         contentTextView.layer.borderWidth = 1
         contentTextView.layer.cornerRadius = 5
         
+        saveButton.layer.cornerRadius = 5
+        
         datePicker.minimumDate = Date()
     }
     
@@ -101,7 +125,6 @@ class EditNoteViewController: UIViewController {
             default:
                 importanceSegmentControl.selectedSegmentIndex = 1
             }
-            print(note.noteColor.debugDescription)
             
             if colorFromColorPicker == nil {
                 switch note.noteColor {
@@ -125,32 +148,11 @@ class EditNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.delegate = self
-        let saveBarButton = UIBarButtonItem(title: "Save", style: UIBarButtonItem.Style.done, target: self, action: #selector(saveBarButtonAction))
-        navigationItem.rightBarButtonItem = saveBarButton
         
         //MARK: - keyboard hitifications
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextViw), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextViw), name: UIResponder.keyboardWillHideNotification, object: nil)
         setting()
-    }
-    
-    @objc func saveBarButtonAction () {
-        guard let navController = navigationController as? NotesNavController else { return }
-        var noteColor: UIColor?
-        for colorView in colorViews {
-            if colorView.isHasCheckMark {
-                noteColor = colorView.backgroundColor
-            }
-        }
-        
-        navController.notebook.add(Note(uid: selectedNote?.uid,
-                                        title: titleTextField.text ?? "",
-                                        content: contentTextView.text,
-                                        noteColor: noteColor,
-                                        importance: .important,
-                                        destractionDate: datePicker.date))
-        navController.popViewController(animated: true)
-        navController.notebook.saveToFile()
     }
     
     @objc private func updateTextViw(parametrs: NSNotification) {
@@ -163,7 +165,6 @@ class EditNoteViewController: UIViewController {
             scrollViewBottomConstraint.constant = -keyboardFrame.height
         }
     }
-    
     
     private func setBackGroundImage() {
         let view = colorViews[3]
