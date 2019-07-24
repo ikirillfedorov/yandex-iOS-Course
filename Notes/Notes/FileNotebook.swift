@@ -25,18 +25,9 @@ class FileNotebook {
     private let fileName = "NoteBook"
     private let fileManager = FileManager.default
     
-    private var dirUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("NoteBook")
-
-    //MARK - help functions
-    private func getDirectoryUrl(folderName: String) -> URL {
-        let path = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
-        return path.appendingPathComponent(folderName)
-    }
-    
     private func getPath() -> URL {
         return fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
     }
-
     
     public func add(_ noteBook: Note) {
         notes[noteBook.uid] = noteBook // добавляем в массив
@@ -56,7 +47,7 @@ class FileNotebook {
         }
         let filePath = dirurl.appendingPathComponent(fileName).path //создаем путь файла + название
         do {
-            let data = try JSONSerialization.data(withJSONObject: notes.map { $0.value.json }, options: []) // получаем масств дат JSON
+            let data = try JSONSerialization.data(withJSONObject: notes.mapValues { $0.json }, options: []) // получаем масств дат JSON
             fileManager.createFile(atPath: filePath, contents: data, attributes: nil) //записываем файл по указанному пути с указанным именем
         } catch let error {
             print(error)
@@ -70,14 +61,12 @@ class FileNotebook {
         if fileManager.fileExists(atPath: path.path, isDirectory: &isDir), isDir.boolValue { // проверяем есть ли папка с таким названим
             do {
                 let filePath = dirurl.appendingPathComponent(fileName).path //получаем путь к файлу
-                guard let jsdata = fileManager.contents(atPath: filePath) else { return } //получаем дату из папки
-                let jsArray = try JSONSerialization.jsonObject(with: jsdata, options: []) as! [[String: Any]]  //получаем джейсон
-                
-                for json in jsArray { // проходимся по массиву джейсонов
-                    if let note = Note.parse(json: json) { //анрапаем
-                        notes[note.uid] = note // если джейсон не нил добавляем в словарь элемент типа [String: Note] (ключ uid)
-                    }
+                guard let jsdata = fileManager.contents(atPath: filePath), //получаем дату из папки
+                      let jsDict = try JSONSerialization.jsonObject(with: jsdata) as? [String: [String: Any]] else {
+                    return
                 }
+                let newNotes = jsDict.compactMapValues { Note.parse(json: $0) }
+                notes.merge(newNotes) { (old, new) in new }
             } catch let error {
                 print(error)
             }
