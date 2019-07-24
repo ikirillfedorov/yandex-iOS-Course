@@ -26,8 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         noteBook.saveToFile()
         noteBook.remove(with: note1.uid)
-        noteBook.remove(with: note2.uid)
-        
+
         print(noteBook.notes.count)
         
         noteBook.loadFromFile()
