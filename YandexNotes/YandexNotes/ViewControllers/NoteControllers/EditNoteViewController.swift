@@ -45,15 +45,21 @@ class EditNoteViewController: UIViewController {
                 noteColor = colorView.backgroundColor
             }
         }
+        let newNote = Note(uid: selectedNote?.uid,
+                           title: titleTextField.text ?? "",
+                           content: contentTextView.text,
+                           noteColor: noteColor,
+                           importance: .important,
+                           destractionDate: datePicker.date)
+        navController.notebook.add(newNote)
         
-        navController.notebook.add(Note(uid: selectedNote?.uid,
-                                        title: titleTextField.text ?? "",
-                                        content: contentTextView.text,
-                                        noteColor: noteColor,
-                                        importance: .important,
-                                        destractionDate: datePicker.date))
         navController.popViewController(animated: true)
-        navController.notebook.saveToFile()
+//        let saveNoteOperation = SaveNoteOperation(note: newNote, notebook: navController.notebook)
+//        saveNoteOperation.start()
+        let queue = OperationQueue()
+        let oper = SaveNoteOperation(note: newNote, notebook: navController.notebook, backendQueue: OperationQueue(), dbQueue: OperationQueue())
+        queue.addOperation(oper)
+//        navController.notebook.saveToFile()
     }
     
     

@@ -15,7 +15,12 @@ class NotesNavController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notebook.loadFromFile()
-        notebook.createTestNotes() // create test notes
+//        notebook.loadFromFile()
+
+        let loadNotesDBOperation = LoadNotesDBOperation(notebook: notebook)
+        let queue = OperationQueue()
+        queue.addOperation(loadNotesDBOperation)
+        
+//        notebook.createTestNotes() // create test notes
     }
 }

@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		5C75D3AD22DF9E1E00ACB1D0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D3AC22DF9E1E00ACB1D0 /* ImageCollectionViewCell.swift */; };
 		5C75D3B222E0D39700ACB1D0 /* ImagesNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D3B122E0D39700ACB1D0 /* ImagesNavController.swift */; };
+		5CC4593722E8CBF8004DE130 /* SaveNoteDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593022E8CBF8004DE130 /* SaveNoteDBOperation.swift */; };
+		5CC4593822E8CBF8004DE130 /* BaseDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593122E8CBF8004DE130 /* BaseDBOperation.swift */; };
+		5CC4593922E8CBF8004DE130 /* SaveNoteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593222E8CBF8004DE130 /* SaveNoteOperation.swift */; };
+		5CC4593A22E8CBF8004DE130 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593322E8CBF8004DE130 /* AsyncOperation.swift */; };
+		5CC4593B22E8CBF8004DE130 /* BaseBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593522E8CBF8004DE130 /* BaseBackendOperation.swift */; };
+		5CC4593C22E8CBF8004DE130 /* SaveNotesBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593622E8CBF8004DE130 /* SaveNotesBackendOperation.swift */; };
+		5CC4593E22E8CEDC004DE130 /* LoadNotesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593D22E8CEDC004DE130 /* LoadNotesOperation.swift */; };
+		5CC4594022E8CF4A004DE130 /* RemoveNoteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593F22E8CF4A004DE130 /* RemoveNoteOperation.swift */; };
+		5CC4594222E8D020004DE130 /* LoadNotesBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4594122E8D020004DE130 /* LoadNotesBackendOperation.swift */; };
+		5CC4594422E8D0A7004DE130 /* LoadNotesDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4594322E8D0A7004DE130 /* LoadNotesDBOperation.swift */; };
+		5CC4594622E8D0B3004DE130 /* RemoveNoteDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4594522E8D0B3004DE130 /* RemoveNoteDBOperation.swift */; };
 		5CEEB9D522DB6B760067C304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEB9D422DB6B760067C304 /* AppDelegate.swift */; };
 		5CEEB9DA22DB6B760067C304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CEEB9D822DB6B760067C304 /* Main.storyboard */; };
 		5CEEB9DC22DB6B770067C304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CEEB9DB22DB6B770067C304 /* Assets.xcassets */; };
@@ -35,6 +46,17 @@
 /* Begin PBXFileReference section */
 		5C75D3AC22DF9E1E00ACB1D0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C75D3B122E0D39700ACB1D0 /* ImagesNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesNavController.swift; sourceTree = "<group>"; };
+		5CC4593022E8CBF8004DE130 /* SaveNoteDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNoteDBOperation.swift; sourceTree = "<group>"; };
+		5CC4593122E8CBF8004DE130 /* BaseDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDBOperation.swift; sourceTree = "<group>"; };
+		5CC4593222E8CBF8004DE130 /* SaveNoteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNoteOperation.swift; sourceTree = "<group>"; };
+		5CC4593322E8CBF8004DE130 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		5CC4593522E8CBF8004DE130 /* BaseBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBackendOperation.swift; sourceTree = "<group>"; };
+		5CC4593622E8CBF8004DE130 /* SaveNotesBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNotesBackendOperation.swift; sourceTree = "<group>"; };
+		5CC4593D22E8CEDC004DE130 /* LoadNotesOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadNotesOperation.swift; sourceTree = "<group>"; };
+		5CC4593F22E8CF4A004DE130 /* RemoveNoteOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveNoteOperation.swift; sourceTree = "<group>"; };
+		5CC4594122E8D020004DE130 /* LoadNotesBackendOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadNotesBackendOperation.swift; sourceTree = "<group>"; };
+		5CC4594322E8D0A7004DE130 /* LoadNotesDBOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadNotesDBOperation.swift; sourceTree = "<group>"; };
+		5CC4594522E8D0B3004DE130 /* RemoveNoteDBOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveNoteDBOperation.swift; sourceTree = "<group>"; };
 		5CEEB9D122DB6B760067C304 /* YandexNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CEEB9D422DB6B760067C304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CEEB9D922DB6B760067C304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,15 +122,44 @@
 			path = NoteControllers;
 			sourceTree = "<group>";
 		};
+		5CC4592E22E8CBF8004DE130 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4593422E8CBF8004DE130 /* BackendOpertations */,
+				5CC4592F22E8CBF8004DE130 /* DBOperations */,
+				5CC4593222E8CBF8004DE130 /* SaveNoteOperation.swift */,
+				5CC4593D22E8CEDC004DE130 /* LoadNotesOperation.swift */,
+				5CC4593F22E8CF4A004DE130 /* RemoveNoteOperation.swift */,
+				5CC4593322E8CBF8004DE130 /* AsyncOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		5CC4592F22E8CBF8004DE130 /* DBOperations */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4593122E8CBF8004DE130 /* BaseDBOperation.swift */,
+				5CC4593022E8CBF8004DE130 /* SaveNoteDBOperation.swift */,
+				5CC4594322E8D0A7004DE130 /* LoadNotesDBOperation.swift */,
+				5CC4594522E8D0B3004DE130 /* RemoveNoteDBOperation.swift */,
+			);
+			path = DBOperations;
+			sourceTree = "<group>";
+		};
+		5CC4593422E8CBF8004DE130 /* BackendOpertations */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4593522E8CBF8004DE130 /* BaseBackendOperation.swift */,
+				5CC4593622E8CBF8004DE130 /* SaveNotesBackendOperation.swift */,
+				5CC4594122E8D020004DE130 /* LoadNotesBackendOperation.swift */,
+			);
+			path = BackendOpertations;
+			sourceTree = "<group>";
+		};
 		5CEEB9C822DB6B760067C304 = {
 			isa = PBXGroup;
 			children = (
 				5CEEB9D322DB6B760067C304 /* YandexNotes */,
-				5C75D3AE22DF9E3100ACB1D0 /* ImageView */,
-				5CEEB9E622DB6DCA0067C304 /* Notes */,
-				5CEEBA5522DC3AE30067C304 /* colorPicker */,
-				5CEEB9D222DB6B760067C304 /* Products */,
-				5CEEBA5A22DC3BD00067C304 /* Images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,18 +169,25 @@
 				5CEEB9D122DB6B760067C304 /* YandexNotes.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		5CEEB9D322DB6B760067C304 /* YandexNotes */ = {
 			isa = PBXGroup;
 			children = (
-				5CEEB9D422DB6B760067C304 /* AppDelegate.swift */,
+				5CC4592E22E8CBF8004DE130 /* Operations */,
+				5CEEB9E622DB6DCA0067C304 /* Notes */,
 				5CEEB9ED22DB6E7B0067C304 /* ViewControllers */,
+				5CEEBA6922DE580E0067C304 /* TableViewCell */,
+				5C75D3AE22DF9E3100ACB1D0 /* ImageView */,
+				5CEEBA5522DC3AE30067C304 /* colorPicker */,
+				5CEEB9D222DB6B760067C304 /* Products */,
+				5CEEBA5A22DC3BD00067C304 /* Images */,
 				5CEEB9D822DB6B760067C304 /* Main.storyboard */,
 				5CEEB9DB22DB6B770067C304 /* Assets.xcassets */,
 				5CEEB9DD22DB6B770067C304 /* LaunchScreen.storyboard */,
 				5CEEB9E022DB6B770067C304 /* Info.plist */,
-				5CEEBA6922DE580E0067C304 /* TableViewCell */,
+				5CEEB9D422DB6B760067C304 /* AppDelegate.swift */,
 			);
 			path = YandexNotes;
 			sourceTree = "<group>";
@@ -258,16 +316,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC4593722E8CBF8004DE130 /* SaveNoteDBOperation.swift in Sources */,
+				5CC4593B22E8CBF8004DE130 /* BaseBackendOperation.swift in Sources */,
 				5CEEBA9422DF998D0067C304 /* CollectionViewController.swift in Sources */,
+				5CC4594022E8CF4A004DE130 /* RemoveNoteOperation.swift in Sources */,
 				5C75D3B222E0D39700ACB1D0 /* ImagesNavController.swift in Sources */,
+				5CC4594622E8D0B3004DE130 /* RemoveNoteDBOperation.swift in Sources */,
+				5CC4593A22E8CBF8004DE130 /* AsyncOperation.swift in Sources */,
+				5CC4593E22E8CEDC004DE130 /* LoadNotesOperation.swift in Sources */,
+				5CC4594422E8D0A7004DE130 /* LoadNotesDBOperation.swift in Sources */,
 				5CEEBA6222DC3CED0067C304 /* CheckMarkView.swift in Sources */,
 				5CEEB9EA22DB6DE70067C304 /* FileNotebook.swift in Sources */,
+				5CC4593C22E8CBF8004DE130 /* SaveNotesBackendOperation.swift in Sources */,
 				5CEEBA6B22DED9080067C304 /* ColorPickerViewController.swift in Sources */,
+				5CC4593922E8CBF8004DE130 /* SaveNoteOperation.swift in Sources */,
+				5CC4594222E8D020004DE130 /* LoadNotesBackendOperation.swift in Sources */,
 				5CEEB9EC22DB6DE70067C304 /* NoteExtensions.swift in Sources */,
 				5C75D3AD22DF9E1E00ACB1D0 /* ImageCollectionViewCell.swift in Sources */,
 				5CEEBA6822DE30460067C304 /* ImagesViewController.swift in Sources */,
 				5CEEBA1722DC37D50067C304 /* EditNoteViewController.swift in Sources */,
 				5CEEB9F322DB70670067C304 /* NotesNavController.swift in Sources */,
+				5CC4593822E8CBF8004DE130 /* BaseDBOperation.swift in Sources */,
 				5CEEB9D522DB6B760067C304 /* AppDelegate.swift in Sources */,
 				5CEEBA5822DC3AE40067C304 /* ColorPickerView.swift in Sources */,
 				5CEEB9F722DB720C0067C304 /* TableTableViewController.swift in Sources */,

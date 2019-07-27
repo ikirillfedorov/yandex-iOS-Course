@@ -15,9 +15,6 @@
 //Содержит функцию сохранения всей записной книжки в файл (public func saveToFile(), сигнатура дана для примера).
 //Содержит функцию загрузки записной книжки из файла (public func loadFromFile(), сигнатура дана для примера)
 
-
-
-
 import Foundation
 
 class FileNotebook {
@@ -95,5 +92,3 @@ class FileNotebook {
         }
     }
 }
-
-
