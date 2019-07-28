@@ -17,10 +17,7 @@ class SaveNotesBackendOperation: BaseBackendOperation {
     }
     
     override func main() {
-        print("BACKEND START")
         result = .failure(.unreachable)
-        print("BACKEND NOTE ADDED")
-        print("BACKEND FINISH")
         finish()
     }
 }

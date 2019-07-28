@@ -12,14 +12,18 @@ class NotesNavController: UINavigationController {
     
     var notebook = FileNotebook()
     var colorFromColorPicker: UIColor?
+    let backendQueue = OperationQueue()
+    let dbQueue = OperationQueue()
     
+    let loadNoteQueue = OperationQueue()
+    let removeNoteOueue = OperationQueue()
+    let saveNotesQueue = OperationQueue()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        notebook.loadFromFile()
-
-        let loadNotesDBOperation = LoadNotesDBOperation(notebook: notebook)
-        let queue = OperationQueue()
-        queue.addOperation(loadNotesDBOperation)
+        
+        loadNoteQueue.addOperation(LoadNoteOperation(notebook: notebook, backendQueue: backendQueue, dbQueue: dbQueue))
+        
         
 //        notebook.createTestNotes() // create test notes
     }

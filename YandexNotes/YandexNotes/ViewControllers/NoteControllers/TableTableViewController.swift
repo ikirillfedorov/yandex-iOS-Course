@@ -109,7 +109,10 @@ class TableTableViewController: UITableViewController {
             notebook.remove(with: note.uid)
         }, completion: nil)
         guard let navController = navigationController as? NotesNavController else { return }
-        navController.notebook.saveToFile()
+        navController.removeNoteOueue.addOperation(RemoveNoteOperation(note: note,
+                                                         notebook: navController.notebook,
+                                                         backendQueue: navController.backendQueue,
+                                                         dbQueue: navController.dbQueue))
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
