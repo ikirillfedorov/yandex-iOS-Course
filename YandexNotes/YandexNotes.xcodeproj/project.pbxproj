@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C75D3AD22DF9E1E00ACB1D0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D3AC22DF9E1E00ACB1D0 /* ImageCollectionViewCell.swift */; };
 		5C75D3B222E0D39700ACB1D0 /* ImagesNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D3B122E0D39700ACB1D0 /* ImagesNavController.swift */; };
+		5CB5999122FE985200407058 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5999022FE985200407058 /* AuthViewController.swift */; };
+		5CB5999322FEA0A300407058 /* BackendNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB5999222FEA0A300407058 /* BackendNotes.swift */; };
 		5CC4593722E8CBF8004DE130 /* SaveNoteDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593022E8CBF8004DE130 /* SaveNoteDBOperation.swift */; };
 		5CC4593822E8CBF8004DE130 /* BaseDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593122E8CBF8004DE130 /* BaseDBOperation.swift */; };
 		5CC4593922E8CBF8004DE130 /* SaveNoteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4593222E8CBF8004DE130 /* SaveNoteOperation.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		5C75D3AC22DF9E1E00ACB1D0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C75D3B122E0D39700ACB1D0 /* ImagesNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesNavController.swift; sourceTree = "<group>"; };
+		5CB5999022FE985200407058 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		5CB5999222FEA0A300407058 /* BackendNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendNotes.swift; sourceTree = "<group>"; };
 		5CC4593022E8CBF8004DE130 /* SaveNoteDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNoteDBOperation.swift; sourceTree = "<group>"; };
 		5CC4593122E8CBF8004DE130 /* BaseDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDBOperation.swift; sourceTree = "<group>"; };
 		5CC4593222E8CBF8004DE130 /* SaveNoteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNoteOperation.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				5CEEB9E722DB6DE70067C304 /* FileNotebook.swift */,
 				5CEEB9E822DB6DE70067C304 /* Note.swift */,
 				5CEEB9E922DB6DE70067C304 /* NoteExtensions.swift */,
+				5CB5999222FEA0A300407058 /* BackendNotes.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 		5CEEB9ED22DB6E7B0067C304 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5CB5999022FE985200407058 /* AuthViewController.swift */,
 				5C75D3B422E0DE2300ACB1D0 /* NoteControllers */,
 				5C75D3B322E0DE0F00ACB1D0 /* ImagesControllers */,
 			);
@@ -323,12 +329,14 @@
 				5C75D3B222E0D39700ACB1D0 /* ImagesNavController.swift in Sources */,
 				5CC4594622E8D0B3004DE130 /* RemoveNoteDBOperation.swift in Sources */,
 				5CC4593A22E8CBF8004DE130 /* AsyncOperation.swift in Sources */,
+				5CB5999122FE985200407058 /* AuthViewController.swift in Sources */,
 				5CC4593E22E8CEDC004DE130 /* LoadNotesOperation.swift in Sources */,
 				5CC4594422E8D0A7004DE130 /* LoadNotesDBOperation.swift in Sources */,
 				5CEEBA6222DC3CED0067C304 /* CheckMarkView.swift in Sources */,
 				5CEEB9EA22DB6DE70067C304 /* FileNotebook.swift in Sources */,
 				5CC4593C22E8CBF8004DE130 /* SaveNotesBackendOperation.swift in Sources */,
 				5CEEBA6B22DED9080067C304 /* ColorPickerViewController.swift in Sources */,
+				5CB5999322FEA0A300407058 /* BackendNotes.swift in Sources */,
 				5CC4593922E8CBF8004DE130 /* SaveNoteOperation.swift in Sources */,
 				5CC4594222E8D020004DE130 /* LoadNotesBackendOperation.swift in Sources */,
 				5CEEB9EC22DB6DE70067C304 /* NoteExtensions.swift in Sources */,

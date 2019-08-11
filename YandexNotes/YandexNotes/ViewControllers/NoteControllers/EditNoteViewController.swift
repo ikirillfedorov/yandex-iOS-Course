@@ -54,7 +54,7 @@ class EditNoteViewController: UIViewController {
         navController.notebook.add(newNote)
         
         navController.popViewController(animated: true)
-        navController.saveNotesQueue.addOperation(SaveNoteOperation(note: newNote,
+        navController.commonQueue.addOperation(SaveNoteOperation(note: newNote,
                                                       notebook: navController.notebook,
                                                       backendQueue: navController.backendQueue,
                                                       dbQueue: navController.dbQueue))

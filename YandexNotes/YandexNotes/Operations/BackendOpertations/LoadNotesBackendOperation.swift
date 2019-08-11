@@ -17,6 +17,7 @@ enum LoadNotesBackendResult {
 class LoadNotesBackendOperation: BaseBackendOperation {
     var notebook: FileNotebook
     var result: LoadNotesBackendResult?
+    let backendNotes = BackendNotes()
     
     init(notebook: FileNotebook) {
         self.notebook = notebook
@@ -24,7 +25,14 @@ class LoadNotesBackendOperation: BaseBackendOperation {
     }
     
     override func main() {
-        result = .failure(.unreachable)
-        finish()
+        backendNotes.getGistContent {
+            switch self.backendNotes.result {
+            case .success:
+                self.result = .success(self.backendNotes.notes)
+            case .failure:
+                self.result = .failure(.error)
+            }
+            self.finish()
+        }
     }
 }

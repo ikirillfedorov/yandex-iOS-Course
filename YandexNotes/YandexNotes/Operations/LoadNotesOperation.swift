@@ -14,8 +14,10 @@ class LoadNoteOperation: AsyncOperation {
     private let loadFromDb: LoadNotesDBOperation
     private var loadFromBackend: LoadNotesBackendOperation?
     
-    private(set) var loadFromBackendResult: [String: Note]?
-    private(set) var loadNotesOperationResult = [String: Note]()
+//    private(set) var loadFromBackendResult: [String: Note]?
+//    private(set) var loadNotesOperationResult = [String: Note]()
+    private(set) var loadMainOpertaionResult = [String: Note]()
+
 
     init(notebook: FileNotebook, backendQueue: OperationQueue, dbQueue: OperationQueue) {
         self.notebook = notebook
@@ -37,12 +39,16 @@ class LoadNoteOperation: AsyncOperation {
     override func main() {
         switch loadFromBackend!.result! { // получаем данные с сервера
         case .success(let notes):
-            print("success")
-            loadFromBackendResult = notes // если данные получили считаем их истиной и записываем
+            print("Notes loaded from Backend")
+            loadMainOpertaionResult = notes // если данные получили считаем их истиной и записываем
         case .failure(let networkError):
+            print("Notes loaded from DataBase")
             print(networkError)
-            loadFromBackendResult = loadFromDb.result // если данные не получили грузим данные с БД
+            loadMainOpertaionResult = loadFromDb.result // если данные не получили грузим данные с БД
         }
+        for note in loadMainOpertaionResult.values {
+            self.notebook.add(note)
+        }
+        notebook.saveToFile() //обновляемся в локальной базе данных
     }
-    
 }

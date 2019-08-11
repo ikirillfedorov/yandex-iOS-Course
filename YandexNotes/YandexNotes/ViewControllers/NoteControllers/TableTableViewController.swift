@@ -109,7 +109,7 @@ class TableTableViewController: UITableViewController {
             notebook.remove(with: note.uid)
         }, completion: nil)
         guard let navController = navigationController as? NotesNavController else { return }
-        navController.removeNoteOueue.addOperation(RemoveNoteOperation(note: note,
+        navController.commonQueue.addOperation(RemoveNoteOperation(note: note,
                                                          notebook: navController.notebook,
                                                          backendQueue: navController.backendQueue,
                                                          dbQueue: navController.dbQueue))

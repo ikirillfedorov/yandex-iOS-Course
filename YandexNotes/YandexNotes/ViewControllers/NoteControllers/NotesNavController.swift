@@ -9,22 +9,52 @@
 import UIKit
 
 class NotesNavController: UINavigationController {
+    var token = ""
     
     var notebook = FileNotebook()
     var colorFromColorPicker: UIColor?
+    
     let backendQueue = OperationQueue()
     let dbQueue = OperationQueue()
-    
-    let loadNoteQueue = OperationQueue()
-    let removeNoteOueue = OperationQueue()
-    let saveNotesQueue = OperationQueue()
+    let commonQueue = OperationQueue()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadNoteQueue.addOperation(LoadNoteOperation(notebook: notebook, backendQueue: backendQueue, dbQueue: dbQueue))
+        self.commonQueue.addOperation(LoadNoteOperation(notebook: self.notebook, backendQueue: self.backendQueue, dbQueue: self.dbQueue))
+        sleep(2)
+        OperationQueue.main.waitUntilAllOperationsAreFinished()
+
+        print("viewDidLoad finish")
+    }
+    
+    //MARK: TESTING
+    func checkToken() {
+        guard !token.isEmpty else {
+            print("Token NOT HERE")
+            requestToken()
+            return
+        }
+        print("Token HERE")
+    }
+    
+    
+    
+    private func requestToken() {
         
+        let requestTokenViewController = AuthViewController()
+        requestTokenViewController.delegate = self
+        requestTokenViewController.completion = {
+            print("TOKEN CREATED")
+//            self.commonQueue.addOperation(LoadNoteOperation(notebook: self.notebook, backendQueue: self.backendQueue, dbQueue: self.dbQueue))
+        }
         
-//        notebook.createTestNotes() // create test notes
+        present(requestTokenViewController, animated: false, completion: nil)
+    }
+}
+
+extension NotesNavController: AuthViewControllerDelegate {
+    func handleTokenChanged(token: String) {
+        self.token = token
     }
 }

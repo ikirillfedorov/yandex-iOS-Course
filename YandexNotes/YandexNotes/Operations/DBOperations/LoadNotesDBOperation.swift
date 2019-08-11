@@ -18,8 +18,9 @@ class LoadNotesDBOperation: BaseDBOperation {
     }
     
     override func main() {
-        notebook.loadFromFile()
-        result = notebook.notes
+        let tempNotebook = FileNotebook()
+        tempNotebook.loadFromFile()
+        result = tempNotebook.notes
         finish()
     }
 }
