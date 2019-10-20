@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CorePlot
+import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,26 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let note1 = Note(uid: nil, title: "Title", content: "fdsfds", noteColor: .red, importance: .important, destractionDate: nil)
         
-        let noteBook = FileNotebook()
-        print(noteBook.notes.count)
+        #if DEBUG
+        let note1 = Note(uid: nil, title: "Title", content: "Buy milk", noteColor: .red, importance: .important, destractionDate: nil)
+        let note2 = Note(uid: nil, title: "Title", content: "Buy bread", noteColor: .green, importance: .important, destractionDate: nil)
+
+        let notebook = FileNotebook()
         
-        noteBook.add(note1)
-        print(noteBook.notes.count)
+        notebook.add(note1)
+        print("Now in notebook \(notebook.notes.count) notes")
+        notebook.add(note2)
+        print("Now in notebook \(notebook.notes.count) notes")
+
+        notebook.saveToFile()
         
-        noteBook.remove(with: note1.uid)
-        print(noteBook.notes.count)
-        
-        noteBook.add(note1)
-        print(noteBook.notes.count)
-        
-        noteBook.saveToFile()
-        print(noteBook.notes.count)
-        
-        noteBook.loadFromFile()
-        
-        print(noteBook.notes.count)
+        notebook.remove(with: note1.uid)
+        print("Now in notebook \(notebook.notes.count) notes")
+
+        notebook.remove(with: note2.uid)
+        print("Now in notebook \(notebook.notes.count) notes")
+
+        notebook.loadFromFile()
+        print("Now in notebook \(notebook.notes.count) notes")
+        #endif
 
         return true
     }
